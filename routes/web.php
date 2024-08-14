@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\front\CategoryController;
 use App\Http\Controllers\front\HomeController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;

@@ -1,3 +1,4 @@
+
 <header>
     <div class="header-area">
         <div class="header-top d-none d-sm-block">
@@ -42,10 +43,9 @@
                     <div class="main-menu d-none d-lg-block">
                         <nav>
                             <ul id="navigation">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="categories.html">Men</a></li>
-                                <li><a href="categories.html">Women</a></li>
-                                <li class="new"><a href="categories.html">Baby Collection</a></li>
+                                @foreach ($navItems as $nav)
+                                <li><a href="index.html">{{$nav->name}}</a></li>
+                                @endforeach
                                 <li><a href="#">Pages <i class="fas fa-angle-down"></i></a>
                                     <ul class="submenu">
                                         <li><a href="login.html">Login</a></li>

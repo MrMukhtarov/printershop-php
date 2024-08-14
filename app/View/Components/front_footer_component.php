@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class front-header-component extends Component
+class front_footer_component extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class front-header-component extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.front-header-component');
+        return view('components.front-footer-component');
     }
 }
