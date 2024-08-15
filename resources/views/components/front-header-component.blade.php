@@ -1,37 +1,5 @@
-
 <header>
     <div class="header-area">
-        <div class="header-top d-none d-sm-block">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="d-flex justify-content-between flex-wrap align-items-center">
-                            <div class="header-info-left">
-                                <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                </ul>
-                            </div>
-                            <div class="header-info-right d-flex">
-                                <ul class="order-list">
-                                    <li><a href="#">My Wishlist</a></li>
-                                    <li><a href="#">Track Your Order</a></li>
-                                </ul>
-                                <ul class="header-social">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li> <a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li> <a href="#"><i class="fab fa-youtube"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="header-mid header-sticky">
             <div class="container">
                 <div class="menu-wrapper">
@@ -46,22 +14,13 @@
                                 @foreach ($navItems as $nav)
                                 <li><a href="index.html">{{$nav->name}}</a></li>
                                 @endforeach
-                                <li><a href="#">Pages <i class="fas fa-angle-down"></i></a>
+                                <li><a href="#">{{LaravelLocalization::getCurrentLocaleName() == "English" ? "Products" : "Məhsullar"}} <i class="fas fa-angle-down"></i></a>
                                     <ul class="submenu">
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="pro-details.html">Product Details</a></li>
-                                        <li><a href="checkout.html">Product Checkout</a></li>
+                                        @foreach ($categories as $cat)
+                                        <li><a href="login.html">{{$cat->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="blog.html">Blog</a>
-                                    <ul class="submenu">
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="elements.html">Element</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -96,8 +55,14 @@
             </div>
         </div>
         <div class="header-bottom text-center">
+            @if (LaravelLocalization::getCurrentLocaleName() == "English")
+                
             <p>Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer <a href="#"
                     class="browse-btn">Shop Now</a></p>
+            @else
+            <p>Satışlarda 50%-ə qədər endirimlər. Tələsin! Məhdud vaxtlı təklif! <a href="#"
+                class="browse-btn">İndi alışveriş edin</a></p>
+            @endif
         </div>
     </div>
 </header>

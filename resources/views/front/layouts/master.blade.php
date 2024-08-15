@@ -11,7 +11,7 @@
 <body>
 
     <x-front-header-component />
-        @yield('content')
+    @yield('content')
     <x-front-footer-component />
 
     @include('front.layouts.includes.foot')
