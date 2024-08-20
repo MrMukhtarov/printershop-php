@@ -15,7 +15,7 @@
     <x-front-footer-component />
 
     @include('front.layouts.includes.foot')
-    @push('js')
+    {{-- @push('js')
         <script async="" src="../../gtag/js?id=UA-23581568-13"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -27,7 +27,7 @@
 
             gtag('config', 'UA-23581568-13');
         </script>
-    @endpush
+    @endpush --}}
 </body>
 
 </html>

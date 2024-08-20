@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Nav_Items;
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Component;
 
 class frontHeaderComponent extends Component
@@ -25,6 +26,10 @@ class frontHeaderComponent extends Component
     {
         $navItems = Nav_Items::all();
         $categories = Category::all();
-        return view('components.front-header-component', compact("navItems","categories"));
+        $user = null;
+        if(Auth::user()){
+            $user = Auth::user();
+        }
+        return view('components.front-header-component', compact("navItems","categories","user"));
     }
 }
